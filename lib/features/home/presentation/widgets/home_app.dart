@@ -18,12 +18,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               children: [
                 Text(
                   'Current location',
-                  style: TextStyle(color: AppColors.textGrey, fontSize: 12),
+                  style: TextStyle(color: AppColors.textGrey, fontSize: 10),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 6),
                 Row(
                   children: [
-                    Icon(Icons.location_on, color: AppColors.primary, size: 18),
+                    Icon(
+                      Icons.location_on_outlined,
+                      color: AppColors.primary,
+                      size: 15,
+                    ),
                     const SizedBox(width: 4),
                     Text(
                       'Wallace, Australia',
@@ -38,12 +42,15 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               ],
             ),
             Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(color: AppColors.white),
+              padding: EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey.shade100),
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Icon(
                 Icons.notifications_none,
-                color: AppColors.textBlack,
-                size: 20,
+                color: Colors.black,
+                size: 23,
               ),
             ),
           ],

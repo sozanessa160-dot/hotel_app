@@ -8,10 +8,10 @@ class HotelMainImage extends StatelessWidget {
     return Stack(
       children: [
         ClipRRect(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(10),
           child: Image.network(
             'https://images.unsplash.com/photo-1566073771259-6a8506099945',
-            height: 300,
+            height: 216,
             width: double.infinity,
             fit: BoxFit.cover,
           ),

@@ -12,7 +12,7 @@ class PreviewImageItem extends StatelessWidget {
         margin: const EdgeInsets.only(right: 10),
         height: 80,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
             image: NetworkImage(imageUrl),
             fit: BoxFit.cover,

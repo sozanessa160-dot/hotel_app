@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_app/core/app_colors.dart';
-import 'preview_image_item.dart'; // استيراد الـ Preview Image المنفصل
+import 'preview_image_item.dart'; //
 
 class HotelDescriptionSection extends StatelessWidget {
   const HotelDescriptionSection({super.key});
@@ -15,7 +15,11 @@ class HotelDescriptionSection extends StatelessWidget {
           children: [
             const Text(
               "The Aston Vill Hotel",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textBlack,
+              ),
             ),
             RichText(
               text: const TextSpan(
@@ -24,7 +28,7 @@ class HotelDescriptionSection extends StatelessWidget {
                     text: "\$200.7",
                     style: TextStyle(
                       color: AppColors.primary,
-                      fontSize: 20,
+                      fontSize: 17,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -53,9 +57,25 @@ class HotelDescriptionSection extends StatelessWidget {
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
-        const Text(
-          "Aston Hotel, Alice Springs NT 0870, Australia is a modern hotel, elegant 5 star hotel overlooking the sea, perfect for a romantic, charming Read More...",
-          style: TextStyle(color: Colors.grey, height: 1.5),
+        Text.rich(
+          TextSpan(
+            children: [
+              const TextSpan(
+                text:
+                    "Aston Hotel, Alice Springs NT 0870, Australia is a modern hotel, elegant 5 star hotel overlooking the sea, perfect for a romantic, charming ",
+                style: TextStyle(color: Colors.grey, height: 1.5, fontSize: 14),
+              ),
+              TextSpan(
+                text: "Read More...",
+                style: TextStyle(
+                  color: AppColors.primary,
+                  fontWeight: FontWeight.bold,
+                  height: 1.5,
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
         ),
         const SizedBox(height: 20),
         const Text(

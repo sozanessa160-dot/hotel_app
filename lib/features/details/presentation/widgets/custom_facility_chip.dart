@@ -18,7 +18,7 @@ class CustomFacilityChip extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.lightGrey.withOpacity(0.002),
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -33,8 +33,8 @@ class CustomFacilityChip extends StatelessWidget {
         children: [
           Icon(
             icon,
-            size: 16,
-            color: isRating ? AppColors.orange : AppColors.primary,
+            size: 18,
+            color: isRating ? AppColors.orange : AppColors.textBlack,
           ),
           SizedBox(width: 5),
           Text(

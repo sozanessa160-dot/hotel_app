@@ -29,16 +29,28 @@ class PopularHotelTile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Asteria Hotel",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                    color: AppColors.textBlack,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "The Aston Vill Hotel",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(191, 0, 0, 0),
+                        fontSize: 14,
+                      ),
+                    ),
+
+                    Row(
+                      children: const [
+                        Icon(Icons.star, color: AppColors.orange, size: 20),
+                        Text(" 5.0"),
+                      ],
+                    ),
+                  ],
                 ),
                 Text(
-                  "Wilora, Australia",
+                  "Wilora NT 0870, Australia",
                   style: TextStyle(color: AppColors.textGrey, fontSize: 12),
                 ),
                 const SizedBox(height: 8),
@@ -51,12 +63,6 @@ class PopularHotelTile extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          Row(
-            children: [
-              Icon(Icons.star, color: AppColors.orange, size: 16),
-              const Text(" 5.0"),
-            ],
           ),
         ],
       ),

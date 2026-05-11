@@ -10,18 +10,15 @@ class HotelCard extends StatefulWidget {
 }
 
 class _HotelCardState extends State<HotelCard> {
-  // متغير لتتبع حالة الضغط
   bool isPressed = false;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // عند الضغط المستمر أو البدء باللمس يظهر الإطار
       onTapDown: (_) => setState(() => isPressed = true),
       onTapUp: (_) => setState(() => isPressed = false),
       onTapCancel: () => setState(() => isPressed = false),
 
-      // عند الضغط الكامل ينقلنا للصفحة التالية
       onTap: () {
         Navigator.push(
           context,
@@ -35,15 +32,14 @@ class _HotelCardState extends State<HotelCard> {
         margin: const EdgeInsets.only(right: 16),
         decoration: BoxDecoration(
           color: AppColors.white,
-          borderRadius: BorderRadius.circular(12), // جعل الحواف أكثر نعومة
-          // إضافة الإطار الأسود عند الضغط
+          borderRadius: BorderRadius.circular(12), //
           border: Border.all(
             color: isPressed ? Colors.black : Colors.transparent,
-            width: 2,
+            width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withOpacity(0.09),
               blurRadius: 10,
               offset: const Offset(0, 5),
             ),
@@ -85,25 +81,28 @@ class _HotelCardState extends State<HotelCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        "The Aston Vill",
+                        "The Aston Vill Hotel",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          color: Color.fromARGB(191, 0, 0, 0),
+                          fontSize: 14,
                         ),
                       ),
+
                       Row(
                         children: const [
-                          Icon(Icons.star, color: AppColors.orange, size: 16),
+                          Icon(Icons.star, color: AppColors.orange, size: 20),
                           Text(" 5.0"),
                         ],
                       ),
                     ],
                   ),
+                  SizedBox(height: 4),
                   const Text(
-                    "Alice Springs, Australia",
+                    "Alice Springs NT0870, Australia",
                     style: TextStyle(color: AppColors.textGrey, fontSize: 12),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 14),
                   Row(
                     children: [
                       const Text(
