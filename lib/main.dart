@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hotel_app/core/app_colors.dart';
-import 'package:hotel_app/features/home/presentation/page/home_page.dart';
+import 'package:hotel_app/core/main_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.background,
         fontFamily: 'Inter',
       ),
-      home: const MyHomePage(),
+      home: MainScreen(),
     );
   }
 }

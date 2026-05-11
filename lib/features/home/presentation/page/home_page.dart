@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_app/core/app_colors.dart';
 import 'package:hotel_app/features/home/presentation/widgets/category_list.dart';
-import 'package:hotel_app/features/home/presentation/widgets/custom_bottom_nav.dart';
 import 'package:hotel_app/features/home/presentation/widgets/home_app.dart';
 import 'package:hotel_app/features/home/presentation/widgets/hotel_card.dart';
 import 'package:hotel_app/features/home/presentation/widgets/popular_hotel.dart';
@@ -17,7 +16,7 @@ class MyHomePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.background,
         appBar: HomeAppBar(),
-        bottomNavigationBar: CustomBottomNav(),
+        // bottomNavigationBar: CustomBottomNav(),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
