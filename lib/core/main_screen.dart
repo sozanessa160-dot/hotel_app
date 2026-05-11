@@ -18,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
   // قائمة الصفحات التي ستظهر في المنتصف
   final List<Widget> _pages = [
     MyHomePage(), // index 0
-    ScheduleUserPage(), // index 1
+    SchedulePage(), // index 1
     BookmarlPage(), // index 2
     ProfilePage(), // index 3
   ];
