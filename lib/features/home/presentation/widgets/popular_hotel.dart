@@ -17,8 +17,8 @@ class PopularHotelTile extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(15),
-            child: Image.network(
-              'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb',
+            child: Image.asset(
+              'lib/assets/images/homesmall.png',
               width: 80,
               height: 80,
               fit: BoxFit.cover,
@@ -54,12 +54,21 @@ class PopularHotelTile extends StatelessWidget {
                   style: TextStyle(color: AppColors.textGrey, fontSize: 12),
                 ),
                 const SizedBox(height: 8),
-                Text(
-                  "\$165.3 /night",
-                  style: TextStyle(
-                    color: AppColors.primary,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  children: [
+                    const Text(
+                      "\$200.7 ",
+                      style: TextStyle(
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const Text(
+                      "/night",
+                      style: TextStyle(color: AppColors.textGrey, fontSize: 12),
+                    ),
+                  ],
                 ),
               ],
             ),

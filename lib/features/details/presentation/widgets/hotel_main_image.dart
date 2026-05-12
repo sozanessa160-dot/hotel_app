@@ -9,8 +9,8 @@ class HotelMainImage extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          child: Image.network(
-            'https://images.unsplash.com/photo-1566073771259-6a8506099945',
+          child: Image.asset(
+            'lib/assets/images/home1.png',
             height: 216,
             width: double.infinity,
             fit: BoxFit.cover,

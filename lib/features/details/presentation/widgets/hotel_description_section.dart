@@ -85,18 +85,9 @@ class HotelDescriptionSection extends StatelessWidget {
         const SizedBox(height: 10),
         Row(
           children: [
-            PreviewImageItem(
-              imageUrl:
-                  'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b',
-            ),
-            PreviewImageItem(
-              imageUrl:
-                  'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6',
-            ),
-            PreviewImageItem(
-              imageUrl:
-                  'https://images.unsplash.com/photo-1611892440504-42a792e24d32',
-            ),
+            PreviewImageItem(imageUrl: "lib/assets/images/detil1.png"),
+            PreviewImageItem(imageUrl: "lib/assets/images/detil2.png"),
+            PreviewImageItem(imageUrl: "lib/assets/images/detil3.png"),
           ],
         ),
       ],

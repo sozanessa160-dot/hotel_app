@@ -4,28 +4,21 @@ import 'package:hotel_app/features/details/presentation/page/details_home.dart';
 
 class HotelCard extends StatefulWidget {
   const HotelCard({super.key});
-
   @override
   State<HotelCard> createState() => _HotelCardState();
 }
 
 class _HotelCardState extends State<HotelCard> {
   bool isPressed = false;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTapDown: (_) => setState(() => isPressed = true),
-      onTapUp: (_) => setState(() => isPressed = false),
-      onTapCancel: () => setState(() => isPressed = false),
-
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => DetailPage()),
         );
       },
-
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
         width: 260,
@@ -54,8 +47,8 @@ class _HotelCardState extends State<HotelCard> {
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10),
                   ),
-                  child: Image.network(
-                    'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4',
+                  child: Image.asset(
+                    'lib/assets/images/home1.png',
                     height: 160,
                     width: double.infinity,
                     fit: BoxFit.cover,

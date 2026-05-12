@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_app/core/app_colors.dart';
+import 'package:hotel_app/features/home/presentation/widgets/nav_item.dart';
 
-class CustomBottomNav extends StatelessWidget {
+class CustomBottomNav extends StatefulWidget {
   final int selectedIndex;
-  final Function(int) onTap; // دالة نرسلها للصفحة الأم عند الضغط
+  final Function(int) onTap;
 
   const CustomBottomNav({
     super.key,
@@ -11,6 +11,11 @@ class CustomBottomNav extends StatelessWidget {
     required this.onTap,
   });
 
+  @override
+  State<CustomBottomNav> createState() => _CustomBottomNavState();
+}
+
+class _CustomBottomNavState extends State<CustomBottomNav> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,49 +28,38 @@ class CustomBottomNav extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _navItem(Icons.home_rounded, "Home", 0),
-          _navItem(Icons.calendar_month_outlined, "Schedule", 1),
-          _navItem(Icons.bookmark_outline, "Bookmark", 2),
-          _navItem(Icons.person_outline, "Profile", 3),
+          NavItem(
+            icon: Icons.home_filled,
+            label: "Home",
+            index: 0,
+            selectedIndex: widget.selectedIndex,
+            onTap: widget.onTap,
+          ),
+
+          NavItem(
+            icon: Icons.calendar_month,
+            label: "Schedule",
+            index: 1,
+            selectedIndex: widget.selectedIndex,
+            onTap: widget.onTap,
+          ),
+
+          NavItem(
+            icon: Icons.bookmark_outline,
+            label: "Bookmark",
+            index: 2,
+            selectedIndex: widget.selectedIndex,
+            onTap: widget.onTap,
+          ),
+
+          NavItem(
+            icon: Icons.person_outline,
+            label: "Profile",
+            index: 3,
+            selectedIndex: widget.selectedIndex,
+            onTap: widget.onTap,
+          ),
         ],
-      ),
-    );
-  }
-
-  Widget _navItem(IconData icon, String label, int index) {
-    bool isActive = selectedIndex == index;
-
-    return GestureDetector(
-      onTap: () => onTap(index), // هنا نخبر الصفحة الأم بالرقم الجديد
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        decoration: BoxDecoration(
-          color: isActive
-              ? AppColors.primary.withOpacity(0.1)
-              : Colors.transparent,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          children: [
-            Icon(
-              icon,
-              color: isActive ? AppColors.primary : AppColors.textGrey,
-              size: 26,
-            ),
-            if (isActive) ...[
-              const SizedBox(width: 8),
-              Text(
-                label,
-                style: const TextStyle(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ],
-        ),
       ),
     );
   }
